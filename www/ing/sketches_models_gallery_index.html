@@ -145,6 +145,8 @@
 
       var model = data.racing_model;
 
+      $("#model_show div.vertical-scroll > div").trigger("reset");
+
       $("#model_show h1").text(model.name);
       $("#model_sub_gallery h1").text(model.name);
       $("#model_photo h1").text(model.name);

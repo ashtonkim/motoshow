@@ -126,6 +126,8 @@
 
 				_booth_code = company.booth_code;
 
+	      $("#companies_show div.vertical-scroll > div").trigger("reset");
+
         if (company.contact && company.contact.trim() != "") {
           $("#company_contact").show();
           $("#company_contact div").text(company.contact);

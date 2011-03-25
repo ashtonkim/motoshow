@@ -261,6 +261,8 @@
 				
 						var car = msg.car;
 
+			      $("#car_show div.vertical-scroll > div").trigger("reset");
+
 			      $("#car_show h1").text(car.name);
 			      $("#car_company_name div").text(msg.company.name);
 			

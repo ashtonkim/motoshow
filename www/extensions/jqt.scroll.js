@@ -988,6 +988,23 @@
         return null;
     }
 
+    // function transitionEnd (event) {
+    //     
+    //     var $this = $(this),
+    //         options = $this.data("jqt-scroll-options"),
+    //         data = $this.data("jqt-scroll-current-event");
+    //     
+    //     if (data && !data.end) {
+    //         if (data) {
+    //             data.currentPosition = 0;
+    //             options.setPosition($this, options, 0, options.bounceSpeed);
+    //             
+    //         } 
+    //     }
+    //     
+    //     return null;
+    // }
+
     /**
      *    Calculate the momentum of a touch event
      *
