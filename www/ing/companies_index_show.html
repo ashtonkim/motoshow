@@ -195,6 +195,10 @@
           title = "부품업체";
         } else {
           title = "용품업체";
+        } 
+
+        if (category == "") {
+	        title = "완성차";
         }
 
         $("#companies_cars_index h1").text(title);
@@ -213,7 +217,7 @@
 
         // ToDo:
         $("#company_cars_btn").bind("click", function(){
-          window.location.href = "showcars_index.html#" + _booth_code;
+          window.location.href = "showcars_index.html?booth_code=" + _booth_code + "&" + 'back_url=companies_index_show.html#' + category;
         });
 
 			});

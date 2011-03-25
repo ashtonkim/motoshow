@@ -8,12 +8,21 @@
     <style type="text/css" media="screen">@import "../../stylesheets/ing_application.css";</style>
 
 	  <script type="text/javascript">
-	    var booth_code = document.location.hash;
-	    var back_url = "index.html";
-	    if (booth_code != undefined) {
-	      booth_code = booth_code.replace('#', '');
-	      back_url = "booths_index.html";
-	    }
+		var urlParams = {};
+		(function () {
+		    var e,
+		        a = /\+/g,  // Regex for replacing addition symbol with a space
+		        r = /([^&=]+)=?([^&]*)/g,
+		        d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+		        q = window.location.search.substring(1);
+
+		    while (e = r.exec(q))
+		       urlParams[d(e[1])] = d(e[2]);
+		})();
+		
+	    var booth_code = urlParams['booth_code'];
+	    var back_url = urlParams['back_url'];
+
 	  </script>
 	
     <script src="../../jqtouch/jquery.1.4.2.js" type="text/javascript" charset="utf-8"></script>
@@ -414,11 +423,9 @@
 
 				  if (booth_code.trim() != '' ) {
 	          fetch_and_update_cars_list(booth_code);
-			      back_url = "booths_index.html";
 			      $('a#firstBack').attr('href', back_url);
 	        } else {
             fetch_and_update_cars_list_all();
-			      back_url = "index.html";
 			      $('a#firstBack').attr('href', back_url);
 			      $("#cars_index h1").text("전시차 리스트");
           }
@@ -597,7 +604,7 @@
 	        <tr>
 	          <td>
 	            <div>
-			          <img id="car_large_image" src="../../images/loading_image.jpg" width="320" height="460"/>
+			          <img id="car_large_image" src="" />
 	            </div>
 	          </td>
 	        </tr>

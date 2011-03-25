@@ -53,7 +53,8 @@
                 if (button == 1) { // 업체정보
                   window.location.href = 'companies_show.html' + booth_code;
                 } else if (button == 2) { // 전시차보기
-                  window.location.href = 'showcars_index.html' + booth_code;
+                  // window.location.href = 'showcars_index.html' + booth_code;
+                  window.location.href = "showcars_index.html?booth_code=" + booth_code + "&" + 'back_url=booths_index.html';
                 } else {
                   return false;
                 }
